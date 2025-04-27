@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odiwuor Interactive Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to Justus Interactive Web Page</h1>
+
+    <!-- Button for Event Handling -->
+    <button id="myButton">Click Me</button>
+    <button id="colorButton">Change Color/Text</button>
+
+    <!-- Button Click Counter -->
+    <p>Button has been clicked <span id="clickCount">0</span> times.</p>
+
+    <!-- Image Gallery -->
+    <div class="slideshow-container">
+        <img class="slide" src="image 1.jpg" alt="Image 1" onclick="openModal('image 1.jpg')">
+        <img class="slide" src="image 2.jpg" alt="Image 2" onclick="openModal('image 2.jpg')">
+        <img class="slide" src="image 3.jpg" alt="Image 3" onclick="openModal('image 3.jpg')">
+    </div>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <button class="tab" onclick="openTab(event, 'Tab1')">Tab 1</button>
+        <button class="tab" onclick="openTab(event, 'Tab2')">Tab 2</button>
+    </div>
+    <div id="Tab1" class="tab-content">
+        <p>Content for Tab 1</p>
+    </div>
+    <div id="Tab2" class="tab-content">
+        <p>Content for Tab 2</p>
+    </div>
+
+    <!-- Form for Validation -->
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <input type="email" id="email" placeholder="Enter your email" required oninput="validateEmail()">
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <span id="passwordFeedback"></span>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
